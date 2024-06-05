@@ -18,7 +18,6 @@ contract CounterTest is Test {
     }
 
     function test_solution() public {
-
         uint8 answer = uint8(
             uint256(
                 //can use vm.getBlockNumber() and vm.getBlockTimestamp() instead
