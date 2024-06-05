@@ -1,6 +1,6 @@
 pragma solidity ^0.8.13;
 
-contract PredictTheFutureChallenge {
+contract PredictTheFuture {
     address guesser;
     uint8 guess;
     uint256 settlementBlockNumber;
