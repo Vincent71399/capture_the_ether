@@ -16,7 +16,7 @@ contract GuessTheNewNumber {
         //uint8 answer = uint8(keccak256(block.blockhash(block.number - 1), now));
         uint answer = uint8(
            uint256(
-             keccak256(abi.encodePacked( blockhash(block.number - 1), block.timestamp)
+             keccak256(abi.encodePacked(blockhash(block.number - 1), block.timestamp)
              )
            )
          );

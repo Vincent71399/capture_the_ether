@@ -4,7 +4,7 @@ pragma solidity ^0.8.13;
 import {Test, console, stdStorage} from "forge-std/Test.sol";
 import {GuessTheNumber} from "../src/GuessTheNumber.sol";
 
-contract GuessTheNewNumberTest is Test {
+contract GuessTheNumberTest is Test {
     GuessTheNumber public guessTheNumber;
     address challenger;
 
