@@ -17,7 +17,16 @@ contract CounterTest is Test {
         vm.startPrank(challenger);
     }
 
-    function test_solution public {
+    function test_solution() public {
 
+        uint8 answer = uint8(
+            uint256(
+                //can use vm.getBlockNumber() and vm.getBlockTimestamp() instead
+                keccak256(abi.encodePacked(blockhash(block.number - 1), block.timestamp)
+                )
+            )
+        );
+        guessTheNewNumber.guess{value: 1 ether}(answer);
+        assertEq(guessTheNewNumber.isComplete(), true);
     }
 }
